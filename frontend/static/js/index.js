@@ -13,7 +13,19 @@ const router = async () => {
         }
     })
 
-    console.log(potentialMatches);
+    // Find the exact match
+    let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch)
+
+    // If there is no exact match, return to the home page
+    if(!match) {
+        match = {
+            route: routes[0]
+        }
+    }
+    
+    console.log(match.route.view())
 }
 
-document.addEventListener("DOMContentLoaded", router);
+document.addEventListener("DOMContentLoaded", () => {
+    router()
+});
