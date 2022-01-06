@@ -31,6 +31,9 @@ const router = async () => {
     console.log(match.route.view())
 }
 
+// update page on using browser back/forward buttons
+window.addEventListener("popstate", router)
+
 document.addEventListener("DOMContentLoaded", () => {
     // Prevent page reload on navigation, if link has "[data-link]"
     document.body.addEventListener("click", e => {
