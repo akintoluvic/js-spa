@@ -1,8 +1,8 @@
 import BaseView from "./BaseView.js";
 
 export default class Settings extends BaseView {
-    constructor() {
-        super()
+    constructor(params) {
+        super(params)
         this.setTitle("Settings")
     }
 
